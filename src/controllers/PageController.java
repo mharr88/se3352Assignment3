@@ -1,7 +1,20 @@
 package controllers;
 
 public class PageController {
-	
+
+	models.Page model;
+
+    public PageController(models.Page model){
+        this.model = model;
+
+    }
+
+    public void updateModel(){
+
+    }
+
+}
+	/*
 	//reference to model 
 	models.Lessons model;
 	//reference to view
@@ -32,7 +45,7 @@ public class PageController {
 		view.show();
 	}
 	
-	/*
+	
 	public String previewChange()
 	{
 		//to display change in page to user, returns preview of change
@@ -71,9 +84,10 @@ public class PageController {
 	{
 		//user downloads content off page based on contentId
 		this.contentId = contentId;
-	}*/
+	}
 	
 	
 	
 	
 }
+*/

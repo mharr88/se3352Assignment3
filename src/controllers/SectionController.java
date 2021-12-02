@@ -1,6 +1,20 @@
 package controllers;
 
-public class SectionContoller extends PageController {
+public class SectionController {
+
+	models.Section model;
+
+    public SectionController(models.Section model){
+        this.model = model;
+
+    }
+
+    public void updateModel(){
+
+    }
+
+}
+/*public class SectionContoller extends PageController {
 
 	private String newName;
 	
@@ -23,3 +37,4 @@ public class SectionContoller extends PageController {
 		this.newName = newName;
 	}
 }
+*/
