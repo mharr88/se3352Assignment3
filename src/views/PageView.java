@@ -1,43 +1,28 @@
 package views;
 
-public class PageView {
+public class PageView extends Observer {
 
-	private models.Lessons model; 
-	private controllers.PageController controller;
-	
-	//constructor
-	public PageView(models.Lessons model, controllers.PageController controller)
-	{
-		this.setModel(model);	
-		this.setController(controller);
-		
-	}
-	
-	public void show()
-	{
-		// display or refresh needs to be implemented 
-	}
-	
-	//calls show everytime an update is made to a page 
-	public void update()
-	{
-		this.show();
-	}
-	
-	private models.Lessons getModel() {
-		return model;
+	private models.Page pageModel;
+
+	public PageView(models.Page pageModel) {
+		this.pageModel = pageModel;
+		this.setModel(pageModel);
 	}
 
-	private void setModel(models.Lessons model) {
-		this.model = model;
+	public void setModel(models.Page pageModel) {
+		if (this.pageModel != null) {
+			this.pageModel.detach(this);
+		}
+		this.pageModel = pageModel;
+		this.pageModel.attach(this);
 	}
 
-	private controllers.PageController getController() {
-		return controller;
+	public models.Page getModel() {
+		return this.pageModel;
 	}
 
-	private void setController(controllers.PageController controller) {
-		this.controller = controller;
+	@Override
+	public void update() {
+		// Refresh the page and update the HTML
 	}
-	
 }

@@ -3,31 +3,38 @@ package models;
 import java.util.Date;
 
 public class Comment extends Subject {
-    int id;
-    Date lastChanged;
-    String value;
-    
-    public int getId() {
-        return id;
-    }
+	public Comment(int id, Date lastChanged, String value) {
+		super();
+		this.id = id;
+		this.lastChanged = lastChanged;
+		this.value = value;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	private int id;
+	private Date lastChanged;
+	private String value;
 
-    public Date getLastChanged() {
-        return lastChanged;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public void setLastChanged(Date lastChanged) {
-        this.lastChanged = lastChanged;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public String getValue() {
-        return value;
-    }
+	public Date getLastChanged() {
+		return lastChanged;
+	}
 
-    public void setValue(String value) {
-        this.value = value;
-    }
+	public void setLastChanged(Date lastChanged) {
+		this.lastChanged = lastChanged;
+	}
+
+	public String getValue() {
+		return value;
+	}
+
+	public void setValue(String value) {
+		this.value = value;
+	}
 }

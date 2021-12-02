@@ -4,37 +4,14 @@ public class SectionController {
 
 	models.Section model;
 
-    public SectionController(models.Section model){
-        this.model = model;
-
-    }
-
-    public void updateModel(){
-
-    }
-
-}
-/*public class SectionContoller extends PageController {
-
-	private String newName;
-	
-	public String renameSection(String newName)
-	{
-		this.setNewName(newName);
-		return newName;
+	public SectionController(models.Section model) {
+		this.model = model;
 	}
 
-	public void redirectUser(String pageName)
-	{
-		//function to redirect user to another page 
-	}
-	
-	private String getNewName() {
-		return newName;
-	}
-
-	private void setNewName(String newName) {
-		this.newName = newName;
+	public void updateModel(String content, String title) {
+		this.model.setContent(content);
+		this.model.setTitle(title);
+		// Call Notify to notify all subscribed views that the model has changed
+		this.model.Notify();
 	}
 }
-*/
